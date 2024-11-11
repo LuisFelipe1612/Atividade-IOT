@@ -1,0 +1,64 @@
+- <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+- <System>
+  <Provider Name="Microsoft-Windows-UserModePowerService" Guid="{ce8dee0b-d539-4000-b0f8-77bed049c590}" /> 
+  <EventID>12</EventID> 
+  <Version>0</Version> 
+  <Level>4</Level> 
+  <Task>10</Task> 
+  <Opcode>0</Opcode> 
+  <Keywords>0x4000000000000000</Keywords> 
+  <TimeCreated SystemTime="2024-11-11T01:22:39.1091580Z" /> 
+  <EventRecordID>118703</EventRecordID> 
+  <Correlation /> 
+  <Execution ProcessID="1140" ThreadID="16868" /> 
+  <Channel>System</Channel> 
+  <Computer>DESKTOP-T20R35Q</Computer> 
+  <Security UserID="S-1-5-18" /> 
+  </System>
+- <EventData>
+  <Data Name="ProcessPath">C:\Windows\System32\WUDFHost.exe</Data> 
+  <Data Name="ProcessPid">3272</Data> 
+  <Data Name="OldSchemeGuid">{381b4222-f694-41f0-9685-ff5bb260df2e}</Data> 
+  <Data Name="NewSchemeGuid">{381b4222-f694-41f0-9685-ff5bb260df2e}</Data> 
+  </EventData>
+  </Event>
+
+
+
+
+
+ANALISE DA IA CHATGPT
+
+Este log refere-se a um evento gerado pelo Microsoft-Windows-UserModePowerService, que está relacionado à transição de esquemas de energia no Windows. Vamos analisar cada seção para entender o que aconteceu.
+
+1. Identificação do Evento
+Provider Name: Microsoft-Windows-UserModePowerService
+Serviço que gerencia mudanças de configurações de energia no modo de usuário.
+
+EventID: 12
+Este ID indica uma mudança ou aplicação de esquema de energia.
+
+Level: 4
+Representa um aviso. Isso significa que o evento não é um erro crítico, mas pode fornecer informações úteis.
+
+2. Informações do EventData
+ProcessPath: C:\Windows\System32\WUDFHost.exe
+Indica que o processo WUDFHost.exe (Windows User-Mode Driver Framework Host) foi responsável pela mudança ou manutenção do esquema de energia.
+
+ProcessPid: 3272
+ID do processo (Process ID) que executou a ação.
+
+OldSchemeGuid e NewSchemeGuid:
+OldSchemeGuid: {381b4222-f694-41f0-9685-ff5bb260df2e}
+NewSchemeGuid: {381b4222-f694-41f0-9685-ff5bb260df2e}
+Os GUIDs são identificadores únicos para esquemas de energia no Windows. O valor {381b4222-f694-41f0-9685-ff5bb260df2e} corresponde ao esquema de energia Equilibrado (Balanced), que é o padrão em muitos sistemas.
+
+Interpretação:
+A presença do mesmo GUID para OldSchemeGuid e NewSchemeGuid indica que o esquema de energia Equilibrado foi reaplicado, mas não houve efetivamente uma mudança de plano. Isso pode ocorrer durante reinicializações ou quando o sistema reafirma configurações preexistentes.
+
+Conclusão
+Este evento documenta uma reaplicação do esquema de energia padrão Equilibrado, sem mudança de configuração. É provável que tenha sido acionado automaticamente, possivelmente após o retorno de um estado de suspensão, reinicialização, ou por outra rotina de gerenciamento de energia.
+
+Possíveis Ações
+Monitoramento Regular: Se este evento ocorre frequentemente sem outros problemas, não há necessidade de intervenção.
+Configurações de Energia: Caso você esteja enfrentando mudanças inesperadas de comportamento no sistema, verificar as configurações de energia pode ajudar a identificar inconsistências.
