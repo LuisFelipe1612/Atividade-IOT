@@ -1,0 +1,63 @@
+Visão do chatgpt sobre o código bat 
+
+  
+
+Este código é um script de lote (.bat) escrito para ser executado no ambiente do prompt de comando do Windows. Ele implementa um menu simples que oferece várias opções. Vamos comentar cada parte: 
+
+1. @echo off 
+Desativa a exibição dos comandos no terminal, deixando apenas as saídas do script visíveis. 
+
+2. cls 
+Limpa a tela do terminal. 
+
+3. 
+Marca o início do menu. 
+O : indica um rótulo, que serve como ponto de referência para o comando goto. 
+
+4. color 2 
+Altera a cor do texto no terminal. No caso, 2 muda para verde. 
+
+5. echo 
+Exibe texto no terminal: 
+programando como um raiz!!!: mensagem inicial. 
+*1 - mostre os arquivos que está na pasta*: primeira opção do menu. 
+*2 - mostre as informações do sistema onde estou*: segunda opção. 
+*3 - sair*: terceira opção para encerrar o programa. 
+
+6. set /p opção= 
+Solicita ao usuário que insira uma opção e armazena o valor digitado na variável %opção%. 
+
+7. if %opcao% 
+Avalia o valor digitado pelo usuário: 
+equ 1: se a opção for 1, vai para o rótulo :opcao1. 
+equ 2: se a opção for 2, vai para o rótulo :opcao2. 
+equ 3: se a opção for 3, vai para :opcao3. 
+GEQ 4: se o valor for maior ou igual a 4, vai para :opcao4 (opção inválida). 
+
+8. 
+Exibe o conteúdo da pasta atual usando o comando dir. 
+Exibe mensagens indicando que os arquivos foram listados. 
+Pausa o terminal até que o usuário pressione uma tecla (pause). 
+Retorna ao menu inicial com goto menu. 
+
+9. 
+Faz o mesmo que :opcao1 (dir), mas com uma mensagem diferente. 
+Indica que está mostrando "informações do sistema". 
+Após a pausa, retorna ao menu. 
+Nota: Isso parece um erro no script, pois exibe a lista de arquivos, o que não é necessariamente "informações do sistema". Seria melhor usar systeminfo. 
+
+10. 
+Encerra o programa usando exit. 
+
+11. 
+Informa que a opção é inválida. 
+Pausa e retorna ao menu. 
+Problemas e Melhorias: 
+Erro em :opcao2: 
+Poderia usar systeminfo em vez de dir para realmente mostrar informações do sistema. 
+Validação da entrada: 
+O script não trata entradas inválidas como letras ou valores não numéricos. Isso poderia ser melhorado com verificações adicionais. 
+
+  
+
+Esse script demonstra os fundamentos do batch scripting com lógica de controle baseada em menus. 
