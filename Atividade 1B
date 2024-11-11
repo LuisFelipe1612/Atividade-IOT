@@ -1,0 +1,59 @@
+Codigo .bat gerado pela IA
+--------------------------------------------------------------------------------------------------------------
+
+@echo off 
+
+:menu 
+
+cls 
+
+echo ============================================ 
+
+echo            Escolha uma opcao: 
+
+echo ============================================ 
+
+echo 0 - Sair e voltar ao prompt 
+
+echo 1 - Abrir o Google Chrome no site UOL 
+
+echo 2 - Abrir o Bloco de Notas 
+
+echo 3 - Trocar a cor do prompt para amarelo 
+
+echo 4 - Listar todas as tarefas em execucao 
+
+echo ============================================ 
+
+set /p opcao=Digite sua opcao (0 a 4):  
+if "%opcao%"=="0" goto sair 
+if "%opcao%"=="1" goto abrirChrome 
+if "%opcao%"=="2" goto abrirNotepad 
+if "%opcao%"=="3" goto trocarCor 
+if "%opcao%"=="4" goto listarTarefas 
+
+:invalida 
+echo Opcao invalida, tente novamente. 
+pause 
+goto menu 
+
+:abrirChrome 
+start chrome https://www.uol.com.br 
+goto menu 
+
+:abrirNotepad 
+start notepad 
+goto menu 
+
+:trocarCor 
+color 6 
+echo Cor alterada para amarelo. 
+pause 
+goto menu 
+
+:listarTarefas 
+tasklist 
+pause 
+goto menu 
+:sair 
+exit 
